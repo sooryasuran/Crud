@@ -1,0 +1,25 @@
+{% extends 'adminhome.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<br>
+ <div class="card mb-4">
+<div class="card-header">
+        Student Register Form
+    </div>
+          <form method="post">
+         {% csrf_token %}
+     <form method="post">
+         {% csrf_token %}
+    <div class="card-body">
+        {{login_form|crispy}}
+        {{student_form|crispy}}
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+   </div>
+
+     </form>
+         {% endblock %}
+</div>
+
+

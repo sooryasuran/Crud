@@ -1,0 +1,48 @@
+{% extends 'adminhome.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<div class="col-xl-6">
+ <div class="card mb-4">
+     {% for message in messages %}
+     <div class="alert alert-primary" role="alert">
+  {{ message }}
+     </div>
+     {% endfor %}
+
+    <div>
+        <i class="fas fa-chart-area me-1"></i>
+        Student View
+    </div>
+    <div class="card-body">
+        <table width="1000">
+  <thead>
+    <tr>
+       <th scope="col">SI No.</th>
+       <th scope="col">First Name</th>
+       <th scope="col">Last Name</th>
+       <th scope="col">Email Id</th>
+       <th scope="col">Phone No.</th>
+       <th scope="col">Address1</th>
+       <th scope="col">Address2</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for i in stud %}
+    <tr>
+      <td scope="row">{{forloop.counter}}</td>
+      <td>{{i.FirstName}}</td>
+      <td>{{i.LastName}}</td>
+      <td>{{i.Email_id}}</td>
+      <td>{{i.Phone}}</td>
+      <td>{{i.Address1}}</td>
+      <td>{{i.Address2}}</td>
+{% endfor %}
+
+    </tbody>
+</table>
+        </div>
+</div>
+</div>
+
+{% endblock %}
